@@ -1,14 +1,112 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableWithoutFeedback,
+  ScrollView,
+  Keyboard,
+  KeyboardAvoidingView,
+  TextInput,
+  FlatList,
+  Button,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
+import React, { useState } from 'react';
 
-const Bai2_3_3 = () => {
-  return (
-    <View>
-      <Text>Bai2_3_3</Text>
+import PHONE from '../../images/Circle-icons-phone.svg.png'
+import MESS from '../../images/pngtree-messenger-logo-icon-png-image_3571405.jpeg'
+import TRASH from '../../images/4021663.png'
+const DATA = [
+  {
+    id: '1',
+    name: 'Nguyễn Minh Đức',
+    phone: '0385539722',
+  },
+  {
+    id: '2',
+    name: 'Đặng Hoàng Như',
+    phone: '0385539722',
+  },
+  {
+    id: '3',
+    name: 'Bé Ri',
+    phone: '0385539722',
+  },
+];
+const Item = ({ name, phone }) => (
+  <View style={[styles.item, { marginTop: 10 }]}>
+    <Text style={[styles.textName, {}]}>{name}</Text>
+    <Text style={[styles.textPhone, {}]}>{phone}</Text>
+    <View style={styles.blockImage}>
+      <Image source={PHONE} style={styles.image} />
+      <TouchableOpacity onPress={() => {
+        alert(name)
+      }} >
+        <Image source={MESS} style={styles.image} />
+      </TouchableOpacity>
+      <Image source={TRASH} style={styles.image} />
     </View>
-  )
+  </View>
+);
+const Bai2_3_3 = () => {
+  const renderItem = ({ item }) => <Item name={item.name} phone={item.phone} />;
+  return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      {/* <ScrollView> */}
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.textHeader}>
+            Danh bạ
+          </Text>
+        </View>
+
+        <FlatList
+          data={DATA}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+        />
+      </KeyboardAvoidingView>
+      {/* </ScrollView> */}
+    </TouchableWithoutFeedback>
+  );
 }
 
 export default Bai2_3_3
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  header: {
+    height: 100,
+    backgroundColor: '#2B2D42',
+    justifyContent: 'center',
+    paddingLeft: 10,
+  },
+  textHeader: {
+    color: '#ffff',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  item: {
+    backgroundColor: 'pink',
+    padding: 20,
+  },
+  textName: {
+    fontSize: 18,
+    marginBottom: 10,
+    color: '#000000'
+  },
+  blockImage: {
+    flexDirection: 'row'
+  },
+  image: {
+    width: 40,
+    height: 40,
+    marginRight: 10,
+    marginTop: 10,
+  }
+});

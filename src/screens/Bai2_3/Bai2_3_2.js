@@ -12,7 +12,7 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import PHONE from '../../images/Circle-icons-phone.svg.png'
 import NOTE from '../../images/2438239.png'
@@ -22,20 +22,35 @@ const DATA = [
     name: 'Nguyễn Minh Đức',
     phone: '0385539722',
   },
+  {
+    id: '2',
+    name: 'Đặng Hoàng Như',
+    phone: '0385539722',
+  },
+  {
+    id: '3',
+    name: 'Bé Ri',
+    phone: '0385539722',
+  },
 ];
 
-const Item = ({name, phone}) => (
-  <View style={[styles.item, {marginTop: 10}]}>
+
+const Item = ({ name, phone }) => (
+  <View style={[styles.item, { marginTop: 10 }]}>
     <Text style={[styles.textName, {}]}>{name}</Text>
     <Text style={[styles.textPhone, {}]}>{phone}</Text>
     <View style={styles.blockImage}>
       <Image source={PHONE} style={styles.image} />
-      <Image source={NOTE} style={styles.image} />
+      <TouchableOpacity onPress={() => {
+        alert(name)
+      }} >
+        <Image source={NOTE} style={styles.image} />
+      </TouchableOpacity>
     </View>
   </View>
 );
 const Bai2_3_2 = () => {
-  const renderItem = ({item}) => <Item name={item.name} phone={item.phone} />;
+  const renderItem = ({ item }) => <Item name={item.name} phone={item.phone} />;
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       {/* <ScrollView> */}
@@ -73,12 +88,22 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
-  blockImage:{
-    flexDirection:'row'
+  item: {
+    backgroundColor: 'pink',
+    padding: 20,
   },
-  image:{
-    width:40,
-    height:40,
-    marginRight:5
+  textName: {
+    fontSize: 18,
+    marginBottom: 10,
+    color: '#000000'
+  },
+  blockImage: {
+    flexDirection: 'row'
+  },
+  image: {
+    width: 40,
+    height: 40,
+    marginRight: 10,
+    marginTop: 10,
   }
 });
