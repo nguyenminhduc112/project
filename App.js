@@ -19,6 +19,10 @@ import Bai2_3_3 from './src/screens/Bai2_3/Bai2_3_3';
 import Bai2_3_4 from './src/screens/Bai2_3/Bai2_3_4';
 import Bai2_3_5 from './src/screens/Bai2_3/Bai2_3_5';
 import Bai2_3_6 from './src/screens/Bai2_3/Bai2_3_6';
+// Sreens 2.4
+import Bai2_4_1 from './src/screens/Bai2_4/Bai2_4_1';
+import Bai2_4_2 from './src/screens/Bai2_4/Bai2_4_2';
+import Bai2_4_3 from './src/screens/Bai2_4/Bai2_4_3';
 const App = () => {
   const Tab = createBottomTabNavigator();
   const Stack = createNativeStackNavigator();
@@ -61,6 +65,18 @@ const App = () => {
       </Tab.Navigator>
     );
   }
+  // Bài 2.4
+  function Bai2_4() {
+    return (
+      <Tab.Navigator screenOptions={{
+        headerShown: false
+      }}>
+        <Tab.Screen name="Bài 2_4_1" component={Bai2_4_1} />
+        <Tab.Screen name="Bài 2_4_2" component={Bai2_4_2} />
+        <Tab.Screen name="Bài 2_4_3" component={Bai2_4_3} />
+      </Tab.Navigator>
+    );
+  }
   return (
     <NavigationContainer >
       <Stack.Navigator >
@@ -68,6 +84,7 @@ const App = () => {
         <Stack.Screen name="Bài 2_1_6" component={Bai2_1_6} />
         <Stack.Screen name="Bài 2_2" component={Bai2_2} />
         <Stack.Screen name="Bài 2_3" component={Bai2_3} />
+        <Stack.Screen name="Bài 2_4" component={Bai2_4} />
       </Stack.Navigator>
     </NavigationContainer>
   )
