@@ -15,6 +15,7 @@ import {
 import React, { useState } from 'react';
 import SelectBox from 'react-native-multi-selectbox'
 import { xorBy } from 'lodash'
+import { SafeAreaView } from 'react-native-safe-area-context';
 const Bai2_4_2 = () => {
     const [selectedCoures, setSelectedCoures] = useState([])
     const [name, setName] = useState('')
@@ -24,7 +25,7 @@ const Bai2_4_2 = () => {
     function onMultiChange() {
         return (item) => setSelectedCoures(xorBy(selectedCoures, [item], 'id'))
     }
-    
+
 
     const dataPlaces = [
         { id: '1', item: 'Bình Thuận' },
@@ -41,8 +42,8 @@ const Bai2_4_2 = () => {
     ]
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <ScrollView nestedScrollEnabled = {true} style={{width:'100%'}}>
-                <KeyboardAvoidingView
+            <ScrollView nestedScrollEnabled={true} style={{ width: '100%' }}>
+                <SafeAreaView
                     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
                     style={styles.container}>
                     <View style={styles.header}>
@@ -58,16 +59,19 @@ const Bai2_4_2 = () => {
                             <TextInput style={styles.input} placeholder='Nhập năm sinh vào đây nè' value={placeOfBirth} onChangeText={setPlaceOfBirth} />
                         </View><View style={styles.inputGroup}>
                             <Text style={styles.lable}>Nhập môn học</Text>
-                            <SelectBox
-                            listOptionProps={{ nestedScrollEnabled: true }}
-                            label=""
-                                options={dataCourse}
-                                selectedValues={selectedCoures}
-                                onMultiSelect={onMultiChange()}
-                                onTapClose={onMultiChange()}
-                                hideInputFilter={true}
-                                isMulti
-                            />
+                            <View style={{flex:1}}>
+                                <SelectBox
+                                    listOptionProps={{ nestedScrollEnabled: true }}
+                                    label=""
+                                    options={dataCourse}
+                                    selectedValues={selectedCoures}
+                                    onMultiSelect={onMultiChange()}
+                                    onTapClose={onMultiChange()}
+                                    hideInputFilter={true}
+                                    isMulti
+                                    
+                                />
+                            </View>
                         </View>
                         <TouchableOpacity style={[styles.btn, { width: '100%' }]} onPress={() => {
                             setConfirm(true)
@@ -78,7 +82,7 @@ const Bai2_4_2 = () => {
                             <Text style={styles.textResult}>Nhân viên {name}</Text>
                         </View>
                     </View>
-                </KeyboardAvoidingView>
+                </SafeAreaView>
             </ScrollView>
         </TouchableWithoutFeedback>
     )
@@ -103,7 +107,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     inputGroup: {
-        marginBottom: 30
+        marginBottom: 30,
     },
     lable: {
         fontSize: 21,
