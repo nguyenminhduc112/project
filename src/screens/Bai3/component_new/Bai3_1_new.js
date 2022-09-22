@@ -4,7 +4,7 @@ import React from 'react';
 const Bai3_1_new = ({navigation}) => {
   return (
     <SafeAreaView>
-      <Text>Hello Thầy Iu</Text>
+      <Text style={{textAlign:'center'}}>Hello Thầy Iu</Text>
       <TouchableOpacity
         style={styles.button}
         onPress={() => {

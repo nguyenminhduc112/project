@@ -14,6 +14,7 @@ import {
 import React, {useState} from 'react';
 import Bai3_1_new from './component_new/Bai3_1_new';
 const Bai3_1 = ({navigation}) => {
+  const [modal,setModal] = useState(false)
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       {/* <ScrollView> */}
@@ -24,7 +25,9 @@ const Bai3_1 = ({navigation}) => {
           <Text style={styles.textHeader}>Thực Hành Navigation</Text>
         </View>
         <View style={{paddingLeft: 10, paddingRight: 10}}>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => {
+            setModal(true)
+          }}>
             <Text style={styles.textButton}>MỞ MÀNG HÌNH NHỎ</Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -40,15 +43,22 @@ const Bai3_1 = ({navigation}) => {
             width: '100%',
             height: '100%',
             position: 'absolute',
-            backgroundColor: 'grey',
-            opacity: 0.4,
+            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+            justifyContent:'center',
+            display:modal?'flex':'none'
+
           }}>
-          <View>
+          <View style={{
+            height:200,
+            backgroundColor:'#ffff',
+            paddingLeft: 10, paddingRight: 10,
+            justifyContent:'center'
+          }}> 
             <Text>Hello Thầy Iu</Text>
             <TouchableOpacity
               style={styles.button}
               onPress={() => {
-                navigation.goBack();
+                setModal(false)
               }}>
               <Text style={styles.textButton}>Quay Lại</Text>
             </TouchableOpacity>
