@@ -25,6 +25,11 @@ const Index = ({navigation}) => {
             }}>
                 <Text style={styles.textButton}>Bài 2.4</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={()=>{
+                navigation.navigate('Bài 3')
+            }}>
+                <Text style={styles.textButton}>Bài 3</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     </ScrollView>
   

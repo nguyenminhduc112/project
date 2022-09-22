@@ -23,6 +23,12 @@ import Bai2_3_6 from './src/screens/Bai2_3/Bai2_3_6';
 import Bai2_4_1 from './src/screens/Bai2_4/Bai2_4_1';
 import Bai2_4_2 from './src/screens/Bai2_4/Bai2_4_2';
 import Bai2_4_3 from './src/screens/Bai2_4/Bai2_4_3';
+// Sreens 3
+import Bai3_1 from './src/screens/Bai3/Bai3_1';
+import Bai3_1_new from './src/screens/Bai3/component_new/Bai3_1_new';
+import Bai3_2 from './src/screens/Bai3/Bai3_2';
+import Bai3_3 from './src/screens/Bai3/Bai3_3';
+import Bai3_4 from './src/screens/Bai3/Bai3_4';
 const App = () => {
   const Tab = createBottomTabNavigator();
   const Stack = createNativeStackNavigator();
@@ -50,7 +56,7 @@ const App = () => {
     );
   }
 
-  // Bài 2.2
+  // Bài 2.3
   function Bai2_3() {
     return (
       <Tab.Navigator screenOptions={{
@@ -77,14 +83,38 @@ const App = () => {
       </Tab.Navigator>
     );
   }
+  // Bài 3
+  function Bai3() {
+    return (
+      <Tab.Navigator screenOptions={{
+        headerShown: false
+      }}>
+        <Tab.Screen name="Bài 3_1" component={Bai3_1} />
+        <Tab.Screen name="Bài 3_2" component={Bai3_2} />
+        <Tab.Screen name="Bài 3_3" component={Bai3_3} />
+        <Tab.Screen name="Bài 3_4" component={Bai3_4} />
+      </Tab.Navigator>
+    );
+  }
   return (
     <NavigationContainer >
-      <Stack.Navigator >
+      <Stack.Navigator screenOptions={{
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize:26
+        },
+      }}>
         <Stack.Screen name="Home" component={Index} />
         <Stack.Screen name="Bài 2_1_6" component={Bai2_1_6} />
         <Stack.Screen name="Bài 2_2" component={Bai2_2} />
         <Stack.Screen name="Bài 2_3" component={Bai2_3} />
         <Stack.Screen name="Bài 2_4" component={Bai2_4} />
+        <Stack.Screen name="Bài 3" component={Bai3} />
+        <Stack.Screen name="Bài 3_1_new" component={Bai3_1_new} />
       </Stack.Navigator>
     </NavigationContainer>
   )
