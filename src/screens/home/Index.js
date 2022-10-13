@@ -30,6 +30,21 @@ const Index = ({navigation}) => {
             }}>
                 <Text style={styles.textButton}>Bài 3</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={()=>{
+                navigation.navigate('Bài 4')
+            }}>
+                <Text style={styles.textButton}>Bài 4</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={()=>{
+                navigation.navigate('Bài 5')
+            }}>
+                <Text style={styles.textButton}>Bài 5</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={()=>{
+                navigation.navigate('Bài 6')
+            }}>
+                <Text style={styles.textButton}>Bài 6</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     </ScrollView>
   
