@@ -39,6 +39,8 @@ import Bai5_2 from './src/screens/Bai5/Bai5_2';
 import Bai6_1 from './src/screens/Bai6/Bai6_1';
 import Bai6_2 from './src/screens/Bai6/Bai6_2';
 import Bai6_3 from './src/screens/Bai6/Bai6_3';
+// Project Karaoke
+import IndexKara from './src/screens/ProjectKaraoke/IndexKara';
 const App = () => {
   const Tab = createBottomTabNavigator();
   const Stack = createNativeStackNavigator();
@@ -171,6 +173,7 @@ const App = () => {
         <Stack.Screen name="Bài 4" component={Bai4} />
         <Stack.Screen name="Bài 5" component={Bai5} />
         <Stack.Screen name="Bài 6" component={Bai6} />
+        <Stack.Screen name="Karaoke" component={IndexKara} />
         <Stack.Screen name="Bài 3_1_new" component={Bai3_1_new} />
       </Stack.Navigator>
     </NavigationContainer>
