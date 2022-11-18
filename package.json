@@ -21,6 +21,7 @@
     "lodash.xorby": "^4.7.0",
     "react": "18.0.0",
     "react-native": "^0.69.5",
+    "react-native-contacts": "^7.0.5",
     "react-native-dropdown-select-list": "^1.0.21",
     "react-native-gesture-handler": "^2.6.0",
     "react-native-multi-selectbox": "^1.5.0",
