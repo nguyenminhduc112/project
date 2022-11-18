@@ -5,34 +5,34 @@ import WatingForYou from "../../images/watingForYou.jpg";
 import EmLa from "../../images/emLa.jpg";
 import Love from "../../images/love.webp";
 import RemoveLove from "../../images/x.webp";
-var SQLite = require('react-native-sqlite-storage')
-var db = SQLite.openDatabase({name:'karaoke.db',createFromLocation:'~karaoke.db'},this.openCB,this.errorCB)
-const [kara,setKara] = useState([])
-const getKaras = () => {
-  db.transaction(txn => {
-    txn.executeSql(
-      `SELECT * FROM tbl_music ORDER BY id DESC`,
-      [],
-      (sqlTxn, res) => {
-        console.log("kara retrieved successfully");
-        let len = res.rows.length;
+// var SQLite = require('react-native-sqlite-storage')
+// var db = SQLite.openDatabase({name:'karaoke.db',createFromLocation:'~karaoke.db'},this.openCB,this.errorCB)
+// const [kara,setKara] = useState([])
+// const getKaras = () => {
+//   db.transaction(txn => {
+//     txn.executeSql(
+//       `SELECT * FROM tbl_music ORDER BY id DESC`,
+//       [],
+//       (sqlTxn, res) => {
+//         console.log("kara retrieved successfully");
+//         let len = res.rows.length;
 
-        if (len > 0) {
-          let results = [];
-          for (let i = 0; i < len; i++) {
-            let item = res.rows.item(i);
-            results.push({ id: item.id, name: item.name,author:item.author,image:item.imagem,love:item.love });
-          }
+//         if (len > 0) {
+//           let results = [];
+//           for (let i = 0; i < len; i++) {
+//             let item = res.rows.item(i);
+//             results.push({ id: item.id, name: item.name,author:item.author,image:item.imagem,love:item.love });
+//           }
 
-          setKara(results);
-        }
-      },
-      error => {
-        console.log("error on getting categories " + error.message);
-      },
-    );
-  });
-};
+//           setKara(results);
+//         }
+//       },
+//       error => {
+//         console.log("error on getting categories " + error.message);
+//       },
+//     );
+//   });
+// };
 const DATA = [
   {
     id: '1',

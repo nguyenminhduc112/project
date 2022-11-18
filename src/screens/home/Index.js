@@ -46,6 +46,16 @@ const Index = ({navigation}) => {
                 <Text style={styles.textButton}>Bài 6</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button} onPress={()=>{
+                navigation.navigate('Bài 8')
+            }}>
+                <Text style={styles.textButton}>Bài 8</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={()=>{
+                navigation.navigate('Bài 9')
+            }}>
+                <Text style={styles.textButton}>Bài 9</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={()=>{
                 navigation.navigate('Karaoke')
             }}>
                 <Text style={styles.textButton}>Project Karaoke</Text>

@@ -1,7 +1,7 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // Home
 import Index from './src/screens/home/Index';
 // Screens 2.1.6
@@ -39,6 +39,13 @@ import Bai5_2 from './src/screens/Bai5/Bai5_2';
 import Bai6_1 from './src/screens/Bai6/Bai6_1';
 import Bai6_2 from './src/screens/Bai6/Bai6_2';
 import Bai6_3 from './src/screens/Bai6/Bai6_3';
+
+// Screens 8
+import Bai8 from './src/screens/Bai8/Bai8';
+
+// Screens 9
+import Bai9_1 from './src/screens/Bai9/Bai9_1';
+import Bai9_2 from './src/screens/Bai9/Bai9_2';
 // Project Karaoke
 import IndexKara from './src/screens/ProjectKaraoke/IndexKara';
 const App = () => {
@@ -138,19 +145,31 @@ const App = () => {
       </Tab.Navigator>
     );
   }
-    // Bài 6
-    function Bai6() {
-      return (
-        <Tab.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}>
-          <Tab.Screen name="Bài 6_1" component={Bai6_1} />
-          <Tab.Screen name="Bài 6_2" component={Bai6_2} />
-          <Tab.Screen name="Bài 6_3" component={Bai6_3} />
-        </Tab.Navigator>
-      );
-    }
+  // Bài 6
+  function Bai6() {
+    return (
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <Tab.Screen name="Bài 6_1" component={Bai6_1} />
+        <Tab.Screen name="Bài 6_2" component={Bai6_2} />
+        <Tab.Screen name="Bài 6_3" component={Bai6_3} />
+      </Tab.Navigator>
+    );
+  }
+  // Bài 9
+  function Bai9() {
+    return (
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <Tab.Screen name="Bài 9_1" component={Bai9_1} />
+        <Tab.Screen name="Bài 9_2" component={Bai9_2} />
+      </Tab.Navigator>
+    );
+  }
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -173,6 +192,8 @@ const App = () => {
         <Stack.Screen name="Bài 4" component={Bai4} />
         <Stack.Screen name="Bài 5" component={Bai5} />
         <Stack.Screen name="Bài 6" component={Bai6} />
+        <Stack.Screen name="Bài 8" component={Bai8} />
+        <Stack.Screen name="Bài 9" component={Bai9} />
         <Stack.Screen name="Karaoke" component={IndexKara} />
         <Stack.Screen name="Bài 3_1_new" component={Bai3_1_new} />
       </Stack.Navigator>
