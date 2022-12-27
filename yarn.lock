@@ -6420,6 +6420,11 @@
   dependencies:
     "prop-types" "^15.7.2"
 
+"react-native-option-menu@^1.1.3":
+  "integrity" "sha512-veA/F9m57oI554yyAk3k9p2rvE1UbmAEY2hpeNmxAhk/GsiUoQeEe29cYjR1wz4FVzHipC+mQB7zNEfjEm3pfw=="
+  "resolved" "https://registry.npmjs.org/react-native-option-menu/-/react-native-option-menu-1.1.3.tgz"
+  "version" "1.1.3"
+
 "react-native-pager-view@^6.0.2":
   "integrity" "sha512-XL3Qc9k7o0BykclGHtuRUz97FpF6rcKbP8LqszLeS2hKnINYcbUPYqg46EhbwVhFOUJE+XhT3idrSO1e/D6jtQ=="
   "resolved" "https://registry.npmjs.org/react-native-pager-view/-/react-native-pager-view-6.0.2.tgz"
